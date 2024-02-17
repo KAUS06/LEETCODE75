@@ -36,6 +36,17 @@ PYTHON :
 EXPLANATION -
 The provided code defines a function called mergeAlternately within a class named Solution.
 The function takes two strings, word1 and word2, as input and returns a new string that merges the characters of the two input strings alternately.
-zip_longest function: It combines the characters of word1 and word2 into pairs. If one string is shorter than the other, the shorter string is padded with an empty string ('') using the fillvalue argument.
+zip_longest function: It combines the characters of word1 and word2 into pairs. If one string is shorter than the other, the shorter string is padded 
+with an empty string ('') using the fillvalue argument.
 List comprehension: It iterates over the pairs of characters and concatenates them using the + operator.
+('a', 'p')
+('b', 'q')
+('c', 'r')
+In the expression a + b, a and b are unpacked from the tuple and concatenated using the + operator. So, the expression a + b would evaluate to:
+
+'ap' for the first tuple
+'bq' for the second tuple
+'cr' for the third tuple
+
 ''.join function: It combines the elements of the resulting list (which are all concatenated character pairs) into a single string.
+would join the strings 'ap', 'bq', and 'cr' together to form the final merged string 'apbqcr'
