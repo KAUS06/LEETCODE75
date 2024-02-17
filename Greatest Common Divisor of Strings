@@ -1,0 +1,44 @@
+Greatest Common Divisor of Strings
+
+For two strings s and t, we say "t divides s" if and only if s = t + ... + t (i.e., t is concatenated with itself one or more times).
+Given two strings str1 and str2, return the largest string x such that x divides both str1 and str2.
+
+ Example 1:
+
+Input: str1 = "ABCABC", str2 = "ABC"
+Output: "ABC"
+Example 2:
+
+Input: str1 = "ABABAB", str2 = "ABAB"
+Output: "AB"
+Example 3:
+
+Input: str1 = "LEET", str2 = "CODE"
+Output: ""
+
+Solution -
+**class Solution:
+    def gcdOfStrings(self, str1: str, str2: str) -> str:
+        if str1 + str2 != str2 + str1:
+            return ""
+        return str1[:gcd(len(str1),len(str2))]**
+
+Explaination -
+The provided code defines a function named gcdOfStrings within a class named Solution. This function takes two strings, str1 and str2, as input and returns their greatest common divisor (GCD) as a string.
+It first checks if the concatenation of str1 and str2 is equal to the concatenation of str2 and str1. This condition ensures that both strings share a common substring that can be repeated to form both str1 and str2. 
+If this condition is not met, then there is no valid GCD and the function returns an empty string ("")
+
+If the condition is true, the GCD is calculated using gcd(len(str1), len(str2)). 
+**return str1[:gcd(len(str1),len(str2))]**
+Reasoning and Example:
+Consider the example str1 = "ABCABC" and str2 = "ABC".
+The common prefix here is "ABC".
+
+The function correctly calculates the GCD of len(str1) and len(str2)->gcd(len(str1), len(str2)) = 3.
+str1[:3] extracts the substring "ABC" (: operator: This is the slicing operator in many programming languages. It allows you to extract a subset of elements from a sequence (like a string) based on specified starting and 
+ending indices.)
+This substring ("ABC") can be repeated twice to form "ABCABC" (equal to str1) and once to form "ABC" (equal to str2)
+
+
+
+ 
