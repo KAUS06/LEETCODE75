@@ -1,0 +1,41 @@
+You are given two strings word1 and word2. Merge the strings by adding letters in alternating order, starting with word1. If a string is longer than the other, append the additional letters onto the end of the merged string.
+Return the merged string.
+
+Example 1:
+
+Input: word1 = "abc", word2 = "pqr"
+Output: "apbqcr"
+Explanation: The merged string will be merged as so:
+word1:  a   b   c
+word2:    p   q   r
+merged: a p b q c r
+Example 2:
+
+Input: word1 = "ab", word2 = "pqrs"
+Output: "apbqrs"
+Explanation: Notice that as word2 is longer, "rs" is appended to the end.
+word1:  a   b 
+word2:    p   q   r   s
+merged: a p b q   r   s
+Example 3:
+
+Input: word1 = "abcd", word2 = "pq"
+Output: "apbqcd"
+Explanation: Notice that as word1 is longer, "cd" is appended to the end.
+word1:  a   b   c   d
+word2:    p   q 
+merged: a p b q c   d
+
+SOLUTION -
+PYTHON :
+
+**class Solution:
+    def mergeAlternately(self, word1: str, word2: str) -> str:
+        return ''.join(a + b for a, b in zip_longest(word1, word2, fillvalue=''))**
+
+EXPLANATION -
+The provided code defines a function called mergeAlternately within a class named Solution.
+The function takes two strings, word1 and word2, as input and returns a new string that merges the characters of the two input strings alternately.
+zip_longest function: It combines the characters of word1 and word2 into pairs. If one string is shorter than the other, the shorter string is padded with an empty string ('') using the fillvalue argument.
+List comprehension: It iterates over the pairs of characters and concatenates them using the + operator.
+''.join function: It combines the elements of the resulting list (which are all concatenated character pairs) into a single string.
